@@ -1,8 +1,4 @@
 var http = require('http');
+var app = require('./app');
 
-function onRequest(request,response) {
-    response.writeHead(200,{'Content-Type': 'text/plain'});
-    response.end();
-}
-
-http.createServer(onRequest).listen(3000);
+http.createServer(app.handleRequest).listen(3000);
